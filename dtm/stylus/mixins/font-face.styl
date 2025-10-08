@@ -1,0 +1,12 @@
+font-face(family, file, weight = 'normal', style = 'normal')
+	file = font-file-base + file
+	
+	@font-face
+		font-family family
+		font-display swap
+		src url(file + '.eot')
+		src url(file + '.eot?#iefix') format('embedded-opentype'),
+			url(file + '.woff') format('woff'), 
+			url(file + '.ttf') format('truetype')
+		font-weight weight
+		font-style style

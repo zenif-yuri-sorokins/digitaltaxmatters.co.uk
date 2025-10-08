@@ -1,0 +1,106 @@
+.primary-navigation
+	ul
+		float right
+		margin 0
+		
+		li
+			float left
+			line-height 100px
+			margin 0
+			position relative
+			font-size 1.14em
+			
+			&:first-of-type
+				a
+					padding-left 0
+				
+			&:last-of-type
+				a
+					padding-right 0
+				
+			&.menu-item-has-children 
+				margin-top -1.73px
+
+				> a:after
+					content "\f107"
+					font-family "Font Awesome"
+					vertical-align -0.02em
+					margin-left 5px
+				
+				.arrow
+					display none
+
+				li
+					margin 0
+
+			&:hover
+			&:focus
+				.sub-menu
+					left auto
+
+			a
+				color white-colour
+				padding 0 40px
+				
+				&.current-menu-item
+				&:hover
+					color default-colour
+			
+			.sub-menu
+				background transparent
+				z-index 999
+				left -999em
+				top 100px
+				width 200px
+				position absolute
+				padding-top 2px
+				box-shadow 0 7px 20px 0 rgba(0, 0, 0, 0.1)
+				
+				li
+					line-height 50px
+					float none;
+					display block
+					padding 0
+					border-bottom 1px solid #DDD
+					
+					&.menu-item-has-children
+						> a:after
+							content "\f105"
+							float right
+					
+					&:hover
+					&:focus
+						.sub-menu
+							left 200px
+							
+					&:last-of-type
+						border-bottom none
+
+					a
+						padding 0 20px
+						display block
+						color text-colour
+						background white-colour
+						
+						&:hover
+							background default-colour
+							color white-colour
+						
+					.sub-menu
+						left -999em
+						top 0
+						padding-top 0
+
+.top-blue-gradient
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item
+		a.mega-menu-link
+			&:hover
+				color primary-colour
+
+		&.mega-current-menu-item
+			> a.mega-menu-link
+				color primary-colour
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-current-page-ancestor>a.mega-menu-link
+		color primary-colour
+		

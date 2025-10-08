@@ -1,0 +1,101 @@
+/* Page Layouts */
+.page
+	#main-content
+	#primary
+		padding 0
+
+	#main-content > .gi-row
+		margin 0
+
+/* Custom Section */
+.sec
+	padding-top 100px
+	padding-bottom 100px
+
+	&-contained
+		padding-left 0 !important
+		padding-right 0 !important
+
+	&-full-width
+		padding-left 100px !important
+		padding-right 100px !important
+
+	&-full-width-abs
+		padding 0 !important
+
+		.gi-container-fluid
+			padding 0 !important
+
+		.gi-row
+			margin 0 !important
+
+			[class^="gi-col"]
+				padding 0 !important
+
+/* Screen Readers */
+.screen-reader-text
+	clip rect(1px, 1px, 1px, 1px)
+	position absolute
+	height 1px
+	width 1px
+	overflow hidden
+
+/* 404 Page */
+.error404
+	text-align center
+
+	#header
+	#footer
+	.footer-link-boxes
+		display none
+		
+	.not-found-title
+		font-size 220px
+		line-height 1em
+		margin 0
+
+	.not-found-page p
+		font-size 1.5em
+		margin-bottom 30px
+
+	#content
+		position absolute
+		width 100%
+		top 50%
+		left 0
+		transform translate(0, -50%)
+
+/* iframes */
+iframe
+	width 100%
+	margin-bottom -5px
+	border none
+
+/* Float Element */
+.float-right
+	float right
+
+.float-left
+	float left
+
+/* How To Guide */
+.how-to-guide
+	.how-to-guide-name
+		margin 0 0 30px
+		
+	h3
+		font-size 21px
+		margin-bottom 20px
+	
+	p
+		normalize-line-height()
+		margin 10px 0
+	
+	.how-to-guide-tools
+		margin-bottom 30px
+
+	.how-to-step
+		margin-bottom 30px
+	
+	.how-to-step-inner
+		margin-bottom 20px

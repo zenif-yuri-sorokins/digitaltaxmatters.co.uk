@@ -1,0 +1,1058 @@
+/* Home */
+.banner
+	position relative
+	padding-top 250px
+	padding-bottom 180px
+	
+	.banner-content-wrapper
+		padding-left 25%
+		
+		&.alt
+			padding-left 15%
+
+	.content-area
+		position absolute
+		top 50%
+		transform translate(0, -50%)
+		left 0
+		width 100%
+	
+	.banner-heading
+		font-size 4.5em
+		margin-bottom 30px
+		line-height 1.3em
+		
+		.block
+			display block
+			margin-top 10px
+	
+	.banner-content
+		max-width 850px
+		margin-bottom 30px
+		
+		&:last-child
+			margin-bottom 0
+	
+	.banner-services
+		position absolute
+		bottom 65px
+		left 0
+		width 100%
+
+		ul
+			&:before
+			&:after
+				content ""
+			
+			&:after
+				display table
+				clear both
+
+			li
+				float left
+				width 20%
+				padding 0 15px
+				margin-bottom 0
+				
+				.icon-box
+					position relative
+
+					.icon-box-link
+						padding-bottom 20px
+						
+					.icon-box-icon-area
+						i
+							color white-colour
+							transition 0.6s
+
+					.icon-box-content-area
+						.heading
+							font-size 1.2em
+							color white-colour
+						
+						.link
+							color white-colour
+					
+					&:after
+						content ""
+						display block
+						position absolute
+						bottom 0
+						left 0
+						width 300px
+						height 2px
+						background rgba(255, 255, 255, 0.5)
+						transition 0.6s
+						
+					&:hover
+						.icon-box-icon-area
+							i
+								color default-colour
+
+						&:after
+							background default-colour
+	
+	.xero-partnership
+		width 200px
+		text-transform uppercase
+		letter-spacing 3px
+		margin-right -3px
+		text-align center
+		display block
+		margin-top -64px
+		float right
+		
+		p
+			font-size 12px
+			
+	.banner-rating
+		width 300px
+		position absolute
+		right 30%
+		bottom -270px
+		font-size 18px
+
+		.stars
+			color #FFD55F
+			font-size 1.4em
+			margin-bottom 15px
+		
+		.text
+			color white-colour
+			
+			p
+				font-size 1em
+	
+	.newsletter
+		max-width 560px
+		
+		.wrapper
+			.input
+				float left
+				width calc(64% / 2)
+				
+				input
+					background white-colour
+					border-radius 5px 0 0 5px
+					padding 15px 20px
+					height 75px
+				
+				.wpcf7-form-control-wrap
+					margin-bottom 0 !important
+				
+				&.email
+					input
+						border-radius 0
+			
+			.button
+				float left
+				width 36%
+				
+				input
+					border-radius 0 5px 5px 0
+					width 100%
+					padding 15px 20px
+					height 75px
+					outline none
+				
+				.ajax-loader
+					display none !important
+
+			&:before
+			&:after
+				content ""
+				display table
+			
+			&:after
+				clear both
+		
+		.wpcf7-response-output
+			&.wpcf7-validation-errors
+				display none !important
+
+	&.t-a-c
+		.banner-content
+			push-auto()
+
+	&.full-height
+		height 100vh
+	
+	&.banner-service
+		.banner-heading
+			max-width 800px
+	
+	&.banner-extra-padd-bottom
+		padding-bottom 400px
+
+	/* Images */
+	&.home
+		background-image('/wp-content/uploads/2019/05/beautiful-businesswoman.jpg', rgba(0, 0, 0, 0.3))
+	
+	&.services
+		background-image('/wp-content/uploads/2019/06/colleagues-at-work.jpg', rgba(0, 0, 0, 0.4))
+		
+	&.partners
+		background-image('/wp-content/uploads/2019/06/modern-office-team.jpg', rgba(0, 0, 0, 0.4), '', 50% 26%)
+		
+	&.packages
+		background-image('/wp-content/uploads/2019/06/work-collegues-working-on-project.jpg', rgba(0, 0, 0, 0.4), '', 50% 26%)
+	
+	/* Services */
+	&.accounting-services
+		background-image('/wp-content/uploads/2019/06/accounting-services.jpg', rgba(0, 0, 0, 0.3))
+		
+	&.tax-services
+		background-image('/wp-content/uploads/2019/06/tax-services.jpg', rgba(0, 0, 0, 0.4))
+	
+	&.business-support
+		background-image('/wp-content/uploads/2019/06/business-support.jpg', rgba(0, 0, 0, 0.4))
+
+	/* Accounting Services */
+	&.payroll
+		background-image('/wp-content/uploads/2019/06/woman-running-small-business.jpg', rgba(0, 0, 0, 0.3), '', 50% 39%)
+		
+	&.bookkeeping
+		background-image('/wp-content/uploads/2019/05/advice-business-colleagues.jpg', rgba(0, 0, 0, 0.3))
+		
+	&.digital-accounting
+		background-image('/wp-content/uploads/2019/06/digital-accounting.jpg', rgba(0, 0, 0, 0.3))
+	
+	/* Tax Services */
+	&.corporate-tax
+		background-image('/wp-content/uploads/2019/06/two-business-partners.jpg', rgba(0, 0, 0, 0.45))
+		
+	&.self-assessment
+		background-image('/wp-content/uploads/2019/06/self-assessment.jpg', rgba(0, 0, 0, 0.45), '', 50% 30%)
+		
+	&.vat-return
+		background-image('/wp-content/uploads/2019/06/overshot-of-meeting.jpg', rgba(0, 0, 0, 0.3))
+	
+	/* Business Support */
+	&.auditing
+		background-image('/wp-content/uploads/2019/06/business-partners-analysing.jpg', rgba(0, 0, 0, 0.3), '', 50% 88%)
+		
+	&.business-growth
+		background-image('/wp-content/uploads/2019/06/business-growth.jpg', rgba(0, 0, 0, 0.3))
+		
+	&.business-plan
+		background-image('/wp-content/uploads/2019/06/work-colleauge-meeting.jpg', rgba(0, 0, 0, 0.4))
+		
+	&.business-startup
+		background-image('/wp-content/uploads/2019/06/modern-office-team.jpg', rgba(0, 0, 0, 0.4), '', 50% 40%)
+		
+	&.digital-awareness
+		background-image('/wp-content/uploads/2019/06/digital-awareness.jpg', rgba(0, 0, 0, 0.4), '', 50% 40%)
+		
+	&.financial-advice
+		background-image('/wp-content/uploads/2019/06/financial-advice.jpg', rgba(0, 0, 0, 0.4), '', 50% 20%)
+		
+	&.forecasting
+		background-image('/wp-content/uploads/2019/06/colleagues-managing-bookkeeping.jpg', rgba(0, 0, 0, 0.4), '', 50% 60%)
+		
+	&.investment
+		background-image('/wp-content/uploads/2019/06/business-meeting-coffee.jpg', rgba(0, 0, 0, 0.4), '', 50% 20%)
+
+	&.liquidisation-and-insolvency
+		background-image('/wp-content/uploads/2019/06/business-man-on-laptop.jpg', rgba(0, 0, 0, 0.4), '', 50% 60%)
+
+	&.loans
+		background-image('/wp-content/uploads/2019/06/business-investment-meeting.jpg', rgba(0, 0, 0, 0.4), '', 50% 45%)
+
+	&.mortgages
+		background-image('/wp-content/uploads/2019/06/office-interior.jpg', rgba(0, 0, 0, 0.4), '', 50% 45%)
+
+	&.wealth-management
+		background-image('/wp-content/uploads/2019/06/digital-accounting.jpg', rgba(0, 0, 0, 0.4), '', 50% 45%)
+
+	&.pensions
+		background-image('/wp-content/uploads/2019/06/pensions.jpg', rgba(0, 0, 0, 0.4), '', 50% 65%)
+		
+	/* Digital Awareness */
+	&.websites
+		background-image('/wp-content/uploads/2019/06/website-design.jpg', rgba(0, 0, 0, 0.4), '', 50% 40%)
+		
+	&.marketing
+		background-image('/wp-content/uploads/2019/06/marketing.jpg', rgba(0, 0, 0, 0.4), '', 50% 40%)
+
+.home-logos-box
+	padding 25px 15px
+	background white-colour
+	border-radius 6px
+	width 300px
+	box-shadow 0 0 30px 0 rgba(0, 0, 0, 0.15)
+	position fixed
+	bottom 20px
+	left 30px
+	z-index 998
+	
+	.heading
+		display block
+		color secondary-colour
+		font-weight 600
+		margin-bottom 15px
+		text-align center
+	
+	ul
+		li
+			float left
+			width 33%
+			margin-bottom 0
+
+.home-about
+	padding-top 140px
+	padding-bottom 140px
+	
+	.main-about-content
+		margin-bottom 190px
+	
+	.main-icon-content
+		margin-bottom 250px
+
+		.icon-box
+			padding 50px
+			border-radius 6px
+			text-align center
+			box-shadow 0 0 18px 0 rgba(0, 0, 0, 0.08)
+			transition 0.6s
+			
+			.icon-box-icon-area 
+				i
+					margin-bottom 30px
+					font-size 55px
+
+			.icon-box-content-area 
+				.content
+					font-size 18px
+					font-weight 800
+					max-width 266px
+					push-auto()
+					color secondary-colour
+			
+			&:hover
+				box-shadow 0 10px 55px 0 rgba(0, 0, 0, 0.08)
+				
+	.img-content-area
+		.img-area
+			padding-left 50px
+			position relative
+		
+		.about-text
+			text-transform uppercase
+			font-size 1em
+			letter-spacing 3px
+			margin-right -3px
+			position absolute
+			top 50%
+			left -66px
+			transform rotate(-90deg)
+			normalize-line-height()
+	
+	.testimonial-boxes
+		margin 0 -25px
+
+		.testimonial-box-wrapper
+			float left
+			padding 0 25px
+			width 50%
+			
+			&.neg-margin
+				margin-top -130px
+	
+	.bottom-content-area
+		position relative
+		
+		.content-area
+			position absolute
+			left 0 
+			top 50%
+			transform translate(0, -50%)
+		
+		.boxes-area
+			float right
+
+.newsletter-sec
+	.wpcf7-form
+		max-width 1200px
+		push-auto()
+
+	.wrapper
+		margin 0 -15px
+		
+		> div
+			padding 0 15px
+			float left
+		
+		.input
+			width 50%
+		
+		.button
+			width 100%
+		
+		&:before
+		&:after
+			content ""
+			display table
+		
+		&:after
+			clear both
+
+/* About */
+.about-content
+	.main-about-content
+		margin-bottom 0
+	
+	&.move-up-to-banner
+		.img-content-area .content-area
+			transform translate(0, 0)
+
+.about-stat-sec
+	padding-top 200px
+	padding-bottom 300px
+	
+	.main-wrapper-area
+		margin-left -15px
+		margin-right -15px
+		
+		.content-area
+			float right
+			width 50%
+			padding 0 15px
+			position absolute
+			top 50%
+			transform translate(0, -50%)
+			padding-left 60px
+			right 0
+		
+		.img-area
+			padding 0 15px
+			float left
+			width 50%
+			padding-right 60px
+			
+			p
+				&.content
+					margin-bottom 30px
+		
+		&:before
+		&:after
+			content ""
+			display table
+		
+		&:after
+			clear both
+
+.heading-content-sec
+	padding-top 50px
+	padding-bottom 50px
+
+.page-id-7
+	.cta-sec
+		padding-top 0
+
+/* Services */
+.service-page
+	.m-b-xxxl
+		margin-bottom 150px
+
+	.main-wrapper-area
+		position relative
+		margin 0 -15px
+		
+		&:before
+		&:after
+			content ""
+			display table
+		
+		&:after
+			clear both
+		
+		.content-wrapper-area
+			padding 0 15px
+			width 50%
+			padding 0 15px
+			padding-top 60px
+			
+			.content-wrapper
+				padding 60px
+				box-shadow 0 0 35px 0 rgba(0, 0, 0, 0.05)
+				border-radius 10px
+			
+			.content
+				margin 30px 0
+				
+				&:last-child
+					margin-bottom 0
+		
+		.img-wrapper-area
+			padding 0 15px
+			width 50%
+			position absolute
+			top 0
+			right 0
+			float right
+			height 100%
+			
+			.img-area
+				overflow hidden
+				border-radius 10px
+				box-shadow 0 0 60px 0 rgba(0, 0, 0, 0.1)
+				position relative
+				height calc(100% - 70px)
+
+			.img
+				height 450px
+				transition 0.6s
+				height 100%
+				
+				/* Services */
+				&.accounting-services
+					background-image('/wp-content/uploads/2019/06/accounting-services.jpg')
+				
+				&.tax-services
+					background-image('/wp-content/uploads/2019/06/tax-services.jpg')
+				
+				&.business-support
+					background-image('/wp-content/uploads/2019/06/business-support.jpg')
+				
+				/* Partners */
+				&.gudideas
+					background-image('/wp-content/uploads/2019/06/gudideas-partner.jpg', '', '', 50% 50%)
+					
+				&.nest-pension
+					background-image('/wp-content/uploads/2019/06/nest-pension-partner.jpg', '', '', 50% 50%)
+					
+				&.smart-vault
+					background-image('/wp-content/uploads/2019/06/smart-vault-partner.jpg', '', '', 50% 50%)
+					
+				&.fresh-books
+					background-image('/wp-content/uploads/2019/06/fresh-books-partner.jpg', '', '', 50% 50%)
+					
+				&.xero
+					background-image('/wp-content/uploads/2023/11/xero-partner1.jpg', '', '', 50% 50%)
+					
+				&.quickbooks
+					background-image('/wp-content/uploads/2019/06/quickbooks.jpg', '', '', 50% 50%)
+					
+				&.sage
+					background-image('/wp-content/uploads/2019/06/sage.jpg', '', '', 50% 50%)
+					
+				&.receipt-bank
+					background-image('/wp-content/uploads/2021/03/dext.jpeg', '', '', 50% 0)
+					
+				&.big
+					background-image('/wp-content/uploads/2019/06/financial-advice.jpg', '', '', 50% 20%)
+				
+				&:hover
+					transform scale(1.2)
+		
+		&.alt
+			.content-wrapper-area
+				float right
+				
+			.img-wrapper-area
+				float left
+				left 0
+
+.services-sec
+	padding-top 140px
+	padding-bottom 140px
+
+	.services-lists
+		margin-left -15px
+		margin-right -15px
+		margin-bottom -30px
+
+		.services-list
+			display inline-block
+			width 33.333%
+			margin-bottom 30px !important
+			padding 0 15px
+
+/* Service Page */
+.sec-service-content
+	.wrapper-area
+		margin-left 15%
+
+	.content-area
+		width 520px
+		background white-colour
+		padding 75px 50px 50px
+		box-shadow 0 0 15px 0 rgba(0, 0, 0, 0.1)
+		position absolute
+		z-index 1
+		border-radius 10px
+		top 50%
+		transform translate(0, -50%)
+		
+		.subheading
+			margin-bottom 20px
+		
+		.headline
+			margin-bottom 10px
+		
+		.lower-heading
+			color secondary-colour
+			font-size 2.3em
+			line-height 1.4em
+		
+		.content
+			&:after
+				content ""
+				display block
+				width 160px
+				height 1px
+				background rgba(0, 0, 0, 0.1)
+				margin-top 25px
+				margin-bottom 40px
+		
+		.list-tick
+			margin-bottom 35px
+
+			li
+				font-size 16px
+				font-weight 600
+				color primary-colour
+				margin-bottom 20px
+				
+				&:before
+					font-size 14px
+					font-weight 400
+					margin-right 25px
+			
+			&:last-child
+				margin-bottom 0
+	
+	.img-area
+		float left
+		max-width 1250px
+		border-radius 20px
+		overflow hidden
+		box-shadow 0 0 51px -5px rgba(0, 0, 0, 0.1)
+		margin-left 15%
+		
+		img
+			transition 0.6s
+			margin-top -50px
+
+			&:hover
+				transform scale(1.2)
+	
+	&.alt
+		.content-area
+			box-shadow none
+			padding 0
+			float left
+		
+		.img-area
+			float left
+			margin-left 520px
+			width calc(100% - 520px)
+
+.service-testimonial-sec
+	.headline
+		max-width 850px
+		push-auto()
+		line-height 1.5em
+	
+	.testimonial-box-one
+		padding-top 30px !important
+		
+	.testimonial-box-two
+		padding-top 110px !important
+		
+	.testimonial-box-three
+		padding-top 60px !important
+
+	.testimonial-boxes
+		max-width 1400px
+		push-auto()
+		
+		&:before
+		&:after
+			content ""
+			display table
+			
+		&:after
+			clear both
+
+		.testimonial-box-wrapper
+			float left
+			width 33.3333%
+			padding 0 30px
+	
+	.testimonial-box .testimonial-box-content .role
+		margin-bottom 0
+
+.features-sec-list
+	.list-tick
+		margin-bottom -25px
+		overflow hidden
+
+		li
+			width 50%
+			float left
+			margin-bottom 25px
+
+.parent-pageid-336
+	.testimonial-box .testimonial-box-content
+		.name
+			margin-bottom 0
+
+		.role
+			display none
+
+.page-id-284
+.page-id-348
+	.company-logos
+		ul 
+			text-align center
+
+			li
+				float none
+				display inline-block
+				margin-bottom 0
+				
+				img
+					max-width 200px
+	
+/* Contact */
+.page-id-15
+	#title-bar
+		text-align center
+		
+		.title-bar-subheading
+			push-auto()
+
+.contact-sec
+	.headline
+		margin-bottom 30px
+			
+	.form-area
+		max-width 750px
+		push-auto()
+
+		.content
+			margin-bottom 40px
+	
+	.resource-loader
+		position relative
+		
+		.resource-loader-action
+			position absolute
+			top 50%
+			left 50%
+			transform translate(-50%, -50%)
+
+.map-area
+	padding-left 0 !important
+	padding-right 0 !important
+	position relative
+	height 600px
+	
+	.resource-loader
+		position absolute
+		height 100%
+		width 100%
+		left 0
+		top 0
+		
+		.resource-content
+			position relative
+			height 100%
+			width 100%
+			
+			iframe
+				height 100%
+
+		.resource-loader-action
+			position absolute
+			bottom 30px 
+			right 30px
+		
+		&.active
+			.resource-loader-action
+				display none
+	
+	.contact-wrapper
+		position absolute
+		padding 50px
+		border-radius 20px
+		background white-colour
+		box-shadow 0 0 15px 0 rgba(0, 0, 0, 0.1)
+		top 50%
+		left 115px
+		transform translate(0, -50%)
+		
+		.heading
+			font-size 2em
+			margin-bottom 30px
+
+		ul
+			li
+				font-size 16px
+				margin-bottom 20px
+
+				.label
+					font-weight 900
+					color default-colour
+					margin-right 5px
+				
+				a
+					color text-colour
+					
+					&:hover
+						color default-colour
+
+/* Packages */
+.package-table-wrapper
+	max-width 1440px
+	push-auto()
+	
+	.package-table
+		.package-table-row
+			overflow hidden
+
+			> div
+				float left
+				
+			&:nth-of-type(2n)
+				background #F6FAFF
+				
+			.package-table-col
+				padding 0 15px
+				height 60px
+				line-height 60px
+				
+				&.package-table-label
+					width 50%
+					padding-left 0
+					font-weight 600
+					padding-left 15px
+					
+					&.package-table-mute
+						height 120px
+				
+				&.package-table-value
+					width calc(50% / 4)
+					text-align center
+						
+					&.package-table-top
+						font-weight 600
+						height 120px
+						line-height 1.4em
+						color white-colour
+						position relative
+					
+						&.sole
+							background #A7D5FF
+					
+						&.basic
+							background #87C6FF
+					
+						&.standard
+							background #67B4FF
+					
+						&.professional
+							background #479FF5
+							
+						.package-table-top-inner
+							position absolute
+							top 50%
+							transform translate(0, -50%)
+							width 100%
+							left 0
+						
+						.text
+							display block
+							font-size 1.14em
+							font-weight 400
+							margin-bottom 8px
+							line-height 1em
+						
+						.price
+							display block
+							line-height 1em
+							font-size 2em
+							
+							.vat
+								display block
+								font-size 10px
+								font-weight 300
+								line-height 1em
+								letter-spacing 2px
+								margin-top 8px
+
+					i
+						font-size 1.4em
+						
+						&.fa-times-circle
+							color #FF3A3A
+						
+						&.fa-check-circle
+							color #40E640
+
+				&:last-of-type
+					border-right none
+
+.package-table-addons
+	.headline
+		margin-bottom 30px
+	
+	.list-tick
+		li
+			font-size 18px
+			margin-bottom 20px
+			
+			&:before
+				content "\f0a9"
+				font-weight 300
+
+/* Success Stories */
+.category-success-stories
+	article
+		width 33.333%
+		
+		.post-wrapper 
+			.img-wrapper
+				height 380px
+				
+			.entry-body
+				.entry-title
+					margin 0 0 25px
+
+.single
+	.category-success-stories
+		img
+			margin 0
+		
+		.about-stat-sec
+			padding-bottom 100px
+
+.success-testimonial
+	.testimonial
+		.content
+			max-width 1800px
+			margin 40px 0
+		
+		.details
+			span
+				font-weight 600
+				font-size 1.21em
+
+/* Privacy Policy */
+section.privacy-policy
+	.h2
+		padding-top 30px
+	
+	a
+		text-decoration underline
+		
+	.pp-list
+		margin-bottom 0
+	
+		li
+			font-size 16px
+			margin-bottom 10px
+			
+			a
+				color text-colour
+				text-decoration none
+				
+				&:hover
+					color default-colour
+			
+			&:last-of-type
+				margin-bottom 0
+			
+			&:before
+				content "\f105"
+				margin-right 10px
+
+
+
+// Area Page
+.brd-20 img{
+	border-radius: 20px
+}
+
+.service-list-sec.custom-services .content-wrapper{
+	text-align: center;
+  border-radius: 18px;
+  padding: 30px 15px;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,.1);
+}
+ .service-list-sec.custom-services .headline {
+    font-size: 2em;
+	 margin: 0 0 25px;
+  }
+
+
+.faq {
+    margin-bottom: 20px;
+}
+.faq.faq-link .question-wrapper {
+    display: block;
+    padding: 25px 85px 22px 22px;
+    background: #fff;
+    position: relative;
+    box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  border-radius: 20px;
+}
+.faq.faq-link.active .question-wrapper {
+  border-radius: 20px 20px 0 0;
+}
+
+
+
+.faq.faq-link .question-wrapper .question {
+    color: #2e2e2e;
+    font-size: 1.14em;
+    transition: 0.6s;
+    font-weight: 500;
+}
+.faq.faq-link .question-wrapper:after {
+    content: "\f107";
+    font-family: "Font Awesome";
+    height: 100%;
+    width: 68px;
+    text-align: center;
+    line-height: 68px;
+    color: #000;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.8em;
+    transition: 0.6s;
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+.faq.faq-link .answer-wrapper .answer {
+    background: #fff;
+    padding: 20px 22px;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.1);
+  border-radius: 0 0 20px 20px;
+    border-top: none;
+}
+.faq.faq-link.active .question-wrapper,
+.faq.faq-link:hover .question-wrapper {
+    background: #56a9fa;
+}
+.faq.faq-link.active .question-wrapper .question,
+.faq.faq-link:hover .question-wrapper .question {
+    color: #fff;
+}
+.faq.faq-link.active .question-wrapper:after,
+.faq.faq-link:hover .question-wrapper:after {
+    content: "\f106";
+    color: #fff;
+}
+.faq:last-child {
+    margin-bottom: 0 !important;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+ .service-list-sec.custom-services .headline {
+    font-size: 1.5em;
+  }
+}

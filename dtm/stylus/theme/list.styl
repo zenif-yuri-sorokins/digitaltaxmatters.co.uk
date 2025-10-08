@@ -1,0 +1,125 @@
+// List Styles
+ul
+	li
+		margin-bottom 10px
+		
+		&:last-of-type
+			margin-bottom 0 !important
+	
+		&:before
+		i
+			margin-right 5px
+			font-size 1.3em
+			font-family 'Font Awesome'
+			color default-colour
+	
+	ul
+		margin-left 30px
+	
+	&.inline
+		li
+			margin-right 15px
+			margin-bottom 0
+			display inline-block
+			
+			&:last-of-type
+				margin-right 0 !important
+
+		&.float
+			overflow hidden
+
+			li
+				float left
+
+	&.icon
+		margin-left 30px
+		
+		li
+			&:before
+			i
+				margin-left -30px
+
+	&.list-tick
+		li:before
+			content '\f00c'
+			margin-right 10px
+	
+	&.list-bullet
+		margin-left 14px
+		
+		li
+			list-style disc outside none
+	
+	&.list-square
+		margin-left 14px
+		
+		li
+			list-style square outside none
+
+	&.list-number
+		margin-left 15px
+		
+		li
+			list-style decimal outside none
+	
+	&.list-circle
+		margin-left 15px
+		
+		li
+			list-style circle outside none
+
+	&.list-letter
+		margin-left 18px
+		
+		li
+			list-style lower-alpha outside none
+
+	&.list-roman
+		margin-left 18px
+		
+		li
+			list-style lower-roman outside none
+
+	&.sitemap-links
+		li
+
+			&:before
+				font-size 1.5em
+				content "\f178"
+				font-weight 300
+				vertical-align -0.1em
+				margin-right 10px
+			
+			a
+				color text-colour
+				
+				&:hover
+					color default-colour
+				
+			.children
+				margin-top 10px
+	
+	&.social 
+		li
+			i
+				color inherit
+	
+	&.lg
+		li
+			font-size 1.3em
+			margin-bottom 20px
+			
+			i
+			&:before
+				font-size 1.55em
+
+ol
+	padding 0
+	margin-left 15px
+		
+	li
+		list-style decimal outside none
+		margin-bottom 10px
+			
+		&:last-of-type
+			margin-bottom 0

@@ -1,0 +1,192 @@
+@media only screen and (max-width: 767px)
+	.menu-toggle
+		height 50px
+		width 50px
+		float right
+		color white-colour
+		line-height 53px
+		text-align center
+		font-size 27px
+		border-radius 6px
+		
+		&:hover
+			color white-colour
+	
+	.main-header
+		padding 15px 0
+		background white-colour
+		box-shadow 0 0 15px 0 rgba(0, 0, 0, 0.15)
+		background default-colour
+		position fixed
+		width 100%
+		top 0
+		left 0
+		z-index 999
+
+		.logo
+			width 223px
+			padding 0
+
+	.primary-navigation
+		position fixed
+		padding 0
+		left 0
+		width 100%
+		top 80px
+		height calc(100% - 80px)
+		overflow scroll
+		display none
+		
+		ul
+			float none
+			
+			li
+				display block
+				width 100%
+				float none
+				line-height 60px
+				
+				&.menu-item-has-children
+					margin-top 0
+					position relative
+
+					a
+						&:after
+							display none
+					
+					.arrow
+						display block
+						position absolute
+						right 0
+						width 60px
+						height 60px
+						line-height 67px
+						top 0
+						font-size 18px
+						text-align center
+						transition 0.6s
+						z-index 999
+						
+						i
+							margin-right 0
+							color inherit
+							
+				a
+					padding 0
+					display block
+				
+				.sub-menu
+					position static
+					left auto
+					padding-top 0
+					width 100%
+					display none
+					box-shadow none
+					
+					li
+						line-height 60px
+						border none
+						
+						a
+							padding 0
+							background transparent
+							color inherit
+							
+							&:hover
+								background default-colour
+		
+		&.mobile-default
+			background white-colour
+			text-align center
+			
+			ul
+				li
+					&.menu-item-has-children
+						.arrow
+							background secondary-colour !important
+							color white-colour !important
+							
+							&:hover
+								background primary-colour !important
+					
+					&:nth-child(2n)
+						background white-colour !important
+
+					&:nth-child(2n + 1)
+						background grey-colour !important
+
+					a
+						color text-colour !important
+
+						&:hover
+							background default-colour !important
+							color white-colour !important
+		
+		&.mobile-overlay
+			background rgba(0, 0, 0, 0.95)
+			text-align center
+			
+			ul
+				li
+					&.menu-item-has-children
+						.arrow
+							color default-colour
+
+					a
+						color white-colour
+						
+						&:hover
+							color default-colour
+						
+					.sub-menu
+						li
+							a
+								color #959595
+
+								&:hover
+								&:focus
+									background transparent
+									color default-colour
+									
+	#mega-menu-wrap-primary #mega-menu-primary li.mega-menu-megamenu>ul.mega-sub-menu>li.mega-menu-row .mega-menu-column>ul.mega-sub-menu>li.mega-menu-item
+		padding 25px 15px !important
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-megamenu>ul.mega-sub-menu li.mega-menu-column>ul.mega-sub-menu>li.mega-menu-item li.mega-menu-item>a.mega-menu-link
+		background grey-colour !important
+		text-align center !important
+		
+		&:hover
+			color default-colour !important
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-megamenu>ul.mega-sub-menu
+		padding 0
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-megamenu>ul.mega-sub-menu li.mega-menu-column>ul.mega-sub-menu>li.mega-menu-item>a.mega-menu-link
+		font-size 18px
+		color default-colour !important
+		text-align center
+		
+		&:hover
+			color primary-colour !important
+			background transparent !important
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item .mega-sub-menu #mega-menu-26-1 .mega-menu-item-680 .mega-sub-menu li
+		width 100%
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item.mega-menu-item-has-children a:after
+		display none
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item:first-of-type>a.mega-menu-link
+		padding-left 10px !important
+	
+	#mega-menu-wrap-primary #mega-menu-primary>li.mega-menu-item:last-of-type>a.mega-menu-link
+		padding-right 10px !important
+
+@media only screen and (min-width: 768px)
+	.primary-navigation
+		display block !important
+		
+		ul
+			li
+				.sub-menu
+					display block !important

@@ -1,0 +1,141 @@
+// Footer Top
+if footer-top
+	#footer-top
+		padding 50px 0
+		
+		h4
+			margin-top 0
+			margin-bottom 15px
+
+// Footer Main
+if footer-main
+	#footer-main
+		padding-top 80px
+		padding-bottom 200px
+		position relative
+		background linear-gradient(to bottom, white-colour, #B7DCFF)
+		
+		.main-area
+			margin-bottom 50px
+		
+		.logo
+			display block
+			width 410px
+			push-auto()
+			margin-bottom 50px
+		
+		.content
+			normalize-line-height()
+			margin-bottom 50px
+			font-size 1.21em
+			color #383838
+		
+		.gi-container-fluid
+			position relative
+			z-index 5
+		
+		ul	
+			&.contact
+				li
+					margin-bottom 20px
+
+					a
+						display block
+						font-size 40px
+						color secondary-colour
+						line-height 1em
+						font-weight 600
+						
+						i
+							vertical-align -0.08em
+							margin-left 5px
+							color inherit
+						
+						&:hover
+							color default-colour
+				
+			&.other
+				li
+					font-size 0.93em
+					margin-right 20px
+
+					a
+						color #7FA1C3
+						
+						&:hover
+							color secondary-colour
+			
+			&.social
+				margin-top 50px
+
+				li
+					margin-right 25px
+
+					a
+						color white-colour
+						height 50px
+						width 50px
+						line-height 53px
+						text-align center
+						border-radius 6px
+						background default-colour
+						display block
+						box-shadow 0 5px 27px 0 rgba(0, 0, 0, 0.1)
+						&:hover
+							background primary-colour
+
+					i
+						font-size 1.14em
+						margin-right 0
+
+		.footer-bg
+			position absolute
+			bottom 0
+			left 0
+			height 12rem
+			width 100%
+			z-index 1
+			transform translate3d(0, 0, 0)
+			
+			> div
+				background-repeat repeat-x !important
+				position absolute
+				right 0
+				bottom 0
+				left 0
+
+			.clouds
+				background url('/wp-content/uploads/2019/06/clouds.png') repeat-x
+				background-size 225em 15em
+				top -4em
+			
+			.background
+				background-repeat repeat-x !important
+				background url('/wp-content/uploads/2019/06/background.png') repeat-x
+				background-size 225em 14.313em
+				top -2em
+			
+			.foreground
+				background-repeat repeat-x !important
+				background url('/wp-content/uploads/2019/06/foreground.png') repeat-x
+				background-size 225em 15em
+				top -1em
+
+// Footer Bottom
+if footer-bottom
+	#footer-bottom
+		padding 15px 0
+				
+#footer
+	.copyright
+		margin 0 0 30px
+		color #7FA1C3
+		normalize-line-height()
+		font-size 0.93em
+
+		a
+			color #7FA1C3
+			text-decoration underline
+			
+			&:hover
+				color secondary-colour

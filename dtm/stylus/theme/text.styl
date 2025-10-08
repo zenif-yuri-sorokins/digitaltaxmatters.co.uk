@@ -1,0 +1,198 @@
+// Links
+a
+	color default-colour
+	transition main-transition-seconds
+	
+	&:hover
+		color primary-colour
+
+// Paragraph
+p
+	margin 15px 0
+	line-height 2em
+
+// Headings
+h1
+h2
+h3
+h3
+h4
+h5
+h6
+.h1
+.h2
+.h3
+.h3
+.h4
+.h5
+.h6
+	color heading-colour
+	font-family heading-font-family
+	line-height heading-line-height
+	font-weight heading-font-weight
+
+h1
+h2
+h3
+.h1
+.h2
+.h3
+	margin-top 20px
+	margin-bottom 10px
+	
+h4
+h5
+h6
+.h4
+.h5
+.h6
+	margin-top 10px
+	margin-bottom 10px
+
+h1
+.h1
+	font-size 2.6em
+
+h2
+.h2
+	font-size 2.1em
+
+h3
+.h3
+	font-size 1.7em
+	
+h4
+.h4
+	font-size 1.3em
+
+h5
+.h5
+	font-size 1em
+
+h6
+.h6
+	font-size 0.8em
+
+.headline
+	font-size 3em
+	margin 0 0 20px
+
+.big-heading
+	font-size 3.5em
+	font-weight 600
+	line-height 1.3em
+	margin 0 0 30px
+	
+.underline
+	text-decoration underline
+	text-decoration-color default-colour
+
+.bg-c-default
+	.underline
+		text-decoration-color primary-colour
+
+.subheading
+	normalize-line-height()
+	text-transform uppercase
+	letter-spacing 5px
+	margin-right -5px
+	margin-bottom 40px
+	color default-colour
+	position relative
+	padding-left 20px
+	position relative
+	z-index 2
+	
+	&:before
+		content ""
+		display block
+		height 40px
+		width 40px
+		border 3px solid #EEF6FE
+		border-radius 50%
+		position absolute
+		left 0
+		top -23px
+		z-index -1
+		
+.subheading-alt
+	max-width 1150px
+	margin auto
+
+.p-subheading
+	max-width 1200px
+	margin-bottom 60px !important
+
+.t-a-c
+	.p-subheading
+		push-auto()
+
+.t-a-c
+	.subheading
+		padding-left 0
+
+		&:before
+			position static
+			display inline-block
+			margin-left -20px
+		
+		.text
+			display inline-block
+			margin-left -20px
+
+// Text Colours
+.f-c-default
+	color default-colour
+
+.f-c-primary
+	color primary-colour
+	
+.f-c-secondary
+	color secondary-colour
+
+.f-c-white
+	color white-colour
+
+// Text Wieghts
+.f-w-bold
+	font-weight 700
+	
+.f-w-light
+	font-weight 300
+	
+// Text Style
+.f-s-italic
+	font-style italic
+
+.f-s-normal
+	font-style normal
+	
+// Text Aligns
+.t-a-r
+	text-align right
+	
+.t-a-l
+	text-align left
+
+.t-a-c
+	text-align center
+	
+.t-a-j
+	text-align justify
+
+// Text Transforms
+.t-t-l
+	text-transform lowercase
+
+.t-t-u
+	text-transform uppercase
+
+.t-t-c
+	text-transform capitalize
+
+*:first-child{
+  margin-top: 0;
+}
+*:last-child{
+  margin-bottom: 0;
+}

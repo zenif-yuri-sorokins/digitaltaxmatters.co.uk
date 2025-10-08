@@ -1,0 +1,12 @@
+background-image(path, gradient_x = "", gradient_y = "", position = 50% 50%, size = cover, repeat = no-repeat)
+  if gradient_y == ""
+    if gradient_x != ""
+      background: linear-gradient(gradient_x, gradient_x), url(path)
+    else
+      background: url(path)
+  else if gradient_x != "" and gradient_y != ""
+    background: linear-gradient(gradient_x, gradient_y), url(path)
+    
+  background-position: position
+  background-size: size
+  background-repeat: repeat

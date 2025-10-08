@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 204.18 204.18">
+  <defs>
+    <style>
+      .cls-1 {
+        stroke: #56a9fa;
+      }
+
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 8px;
+      }
+
+      .cls-2 {
+        stroke: #a1d5ff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="assembly_ux_testing" data-name="assembly/ux testing">
+      <g>
+        <path class="cls-1" d="M76.78,184.36v2.4c0,2.52-1,4.93-2.78,6.71l-6.71,6.71h69.61l-6.71-6.71c-1.78-1.78-2.78-4.19-2.78-6.71v-15.05"/>
+        <path class="cls-1" d="M190.69,171.71h0c5.24,0,9.49-4.25,9.49-9.49V38.81c0-5.24-4.25-9.49-9.49-9.49"/>
+        <path class="cls-1" d="M13.49,29.31c-5.24,0-9.49,4.25-9.49,9.49v123.41c0,5.24,4.25,9.49,9.49,9.49h117.08"/>
+        <line class="cls-1" x1="98.93" y1="146.39" x2="4" y2="146.39"/>
+        <line class="cls-1" x1="200.18" y1="146.39" x2="178.03" y2="146.39"/>
+      </g>
+      <g>
+        <path class="cls-2" d="M98.93,95.76l8.16,27.3,58.65,72.53c4.28,5.35,12.12,6.14,17.38,1.76h0c5.19-4.33,5.89-12.04,1.57-17.23l-58.62-69.71-27.15-14.65Z"/>
+        <line class="cls-2" x1="157.51" y1="185.41" x2="166.37" y2="178.17"/>
+      </g>
+      <g>
+        <path class="cls-1" d="M178.03,127.41V7.16c0-1.75-1.42-3.16-3.16-3.16H29.31c-1.75,0-3.16,1.42-3.16,3.16v120.24"/>
+        <line class="cls-1" x1="26.15" y1="35.64" x2="178.03" y2="35.64"/>
+        <rect class="cls-1" x="54.63" y="54.63" width="94.93" height="22.15"/>
+      </g>
+    </g>
+  </g>
+</svg>

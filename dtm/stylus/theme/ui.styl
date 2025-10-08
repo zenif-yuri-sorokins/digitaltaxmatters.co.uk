@@ -1,0 +1,890 @@
+/* Buttons */
+.btn
+	padding 24px 37px
+	border-width 3px
+	border-style solid
+	display inline-block
+	normalize-line-height()
+	text-transform uppercase
+	letter-spacing 1px
+	text-indent 1px
+	border-radius 6px
+	font-weight 600
+	
+	i
+		margin-left 5px
+
+.btn-default
+	background default-colour
+	border-color default-colour
+	color white-colour
+		
+	&:hover
+		background primary-colour
+		border-color primary-colour
+		color white-colour
+	
+	&.btn-border
+		color default-colour
+		
+		&:hover
+			background default-colour
+			border-color default-colour
+			color white-colour
+
+.btn-primary
+	background primary-colour
+	border-color primary-colour
+	color white-colour
+	
+	&:hover
+		background default-colour
+		border-color default-colour
+		color white-colour
+		
+	&.btn-border
+		color primary-colour
+		
+		&:hover
+			background primary-colour
+			border-color primary-colour
+			color white-colour
+
+.btn-secondary
+	background secondary-colour
+	border-color secondary-colour
+	color white-colour
+	
+	&:hover
+		background default-colour
+		border-color default-colour
+		color white-colour
+		
+	&.btn-border
+		color secondary-colour
+
+		&:hover
+			background secondary-colour
+			border-color secondary-colour
+			color white-colour
+			
+.btn-white
+	background white-colour
+	border-color white-colour
+	color default-colour
+	
+	&:hover
+		background default-colour
+		border-color default-colour
+		color white-colour
+		
+	&.btn-border
+		color white-colour
+
+		&:hover
+			background white-colour
+			border-color white-colour
+			color default-colour
+
+.btn-border
+	background transparent
+
+.btn-block
+	display block
+	text-align center
+
+.btn-box-shadow
+	box-shadow 0 30px 55px 0 rgba(0, 0, 0, 0.2)
+	
+	&:hover
+		box-shadow 0 30px 55px 0 rgba(0, 0, 0, 0.4)
+
+.btn-sm
+	padding 19px 22px
+
+input[type="submit"]
+input[type="button"]
+button
+	@extends .btn
+	@extends .btn-default
+	transition main-transition-seconds
+
+/* Move Up Toggle */
+#move-up-toggle
+	position fixed
+	bottom 10px
+	right 10px
+	color white-colour
+	height 50px
+	width 50px
+	line-height 52px
+	transition main-transition-seconds
+	text-align center
+	background default-colour
+	display none
+	z-index 997
+	box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15)
+	border-radius 6px
+
+	&:hover
+		background primary-colour
+
+/* Input Tooltip */
+.tooltip
+	position relative
+
+	.tooltip-text
+		visibility hidden
+		background-color #333
+		color white-colour
+		text-align center
+		border-radius 6px
+		padding 5px 10px
+		position absolute
+		z-index 1
+		bottom 109%
+		left 30%
+		margin-left -60px
+		opacity 0
+		transition opacity 0.3s
+
+		&:after
+			content ""
+			position absolute
+			top: 100%
+			left 50%
+			margin-left -5px
+			border-width 5px
+			border-style solid
+			border-color #333 transparent transparent transparent
+
+	&:hover
+		.tooltip-text
+			visibility visible
+			opacity 1
+
+/* Testimonial */
+.testimonial
+	&.style
+		padding 30px
+		background default-colour
+		
+		.heading
+			color white-colour
+
+		.content
+			color white-colour
+
+		.details
+			span
+				&.name
+				&.date
+					font-weight 600
+					color white-colour
+
+	.details
+		overflow hidden
+
+		span
+			float left
+			margin-right 20px
+			
+			&.rating
+				color #FD0
+			
+			&:last-of-type
+				margin-right 0
+
+/* Title Bar */
+#title-bar
+	padding-top 240px
+	padding-bottom 100px
+
+	.title-bar-heading
+		margin 0
+		color white-colour
+		font-size 3.5em
+		text-decoration-color default-colour
+		
+	.title-bar-subheading
+		color white-colour
+		margin-top 35px
+		max-width 600px
+		
+	.breadcrumb
+		margin-top 30px
+		
+	.post-details
+		margin-bottom 20px
+	
+	.social
+		margin-bottom 25px
+		
+		li
+			a
+				height 50px
+				width 50px
+				line-height 56px
+				background default-colour
+				color white-colour
+				border-radius 50%
+				display block
+				text-align center
+				
+				&:hover
+					background primary-colour
+					color white-colour
+
+				i
+					color inherit
+					margin-right 0
+
+/* Breadcrumb */
+.breadcrumb
+	overflow hidden
+	display inline-block
+	padding 22px 27px 18px
+	background default-colour
+	border-radius 6px
+	
+	li
+		display inline-block
+		float left
+		margin 0
+		text-transform uppercase
+		letter-spacing 0.5px
+		text-indent 0.5px
+		font-size 0.86em
+		
+		a
+			color white-colour
+			
+			&:hover
+				color primary-colour
+		
+		&.active
+			color white-colour
+			font-weight 600
+			
+	> li + li:before
+		content "\f30b"
+		display inline-block
+		float left
+		margin-right 0
+		padding 0 12px
+		color #BDDEFF
+		margin-top -1px
+		font-weight 400
+
+/* Blog Post Details */
+.post-details
+	li
+		color white-colour
+
+/* Blog Share */
+.share-post
+	padding 20px 30px
+	background default-colour
+	border-radius 10px
+
+	.heading
+		margin 12px 0
+		color white-colour
+		
+	ul
+		li
+			a
+				height 50px
+				width 50px
+				line-height 58px
+				background white-colour
+				color default-colour
+				border-radius 50%
+				display block
+				text-align center
+				
+				&:hover
+					background secondary-colour
+					color white-colour
+
+				i
+					color inherit
+					margin-right 0
+
+/* Blog Articles */
+.more-articles
+	padding 40px 40px 10px
+	box-shadow 0 0 15px 0 rgba(0, 0, 0, 0.1)
+	border-radius 10px	
+	
+	.heading
+		font-size 2.1em
+		margin 0 0 30px
+	
+	.article
+		margin-bottom 30px
+
+		.article-heading
+			margin 0 0 5px
+			
+			a
+				color secondary-colour
+				
+				&:hover
+					color default-colour
+		
+		.date
+			color #AAA
+			
+		.content
+			normalize-line-height()
+			margin-top 10px
+
+/* Previous / Next Post Buttons */
+.prev-next-post-button
+	.title
+		font-size 1.3em
+		font-weight 600
+		display block
+		margin-bottom 10px
+	
+	&:hover
+		color secondary-colour
+
+/* Action Boxes */
+.action-box
+	text-align center
+	padding 80px 40px
+	margin 60px 0
+	border-radius 10px
+	
+	&.bg-c-default
+		.btn:hover
+			background white-colour
+			border-color white-colour
+			color default-colour
+			
+	&.action-box-form
+		text-align left
+		padding 40px
+		
+		form
+			.form-input
+				border-color white-colour
+				color white-colour
+				+input-placeholder()
+					color #E5E5E5
+				
+				&:focus
+					border-color secondary-colour !important
+			
+			.form-submit
+				background secondary-colour
+				border-color secondary-colour
+				
+				&:hover
+					background white-colour
+					border-color white-colour
+					color default-colour
+
+	.heading
+		color white-colour
+		margin-bottom 15px
+		font-size 2em
+		
+	.content
+		color white-colour
+		margin 0 0 20px
+
+/* Icon Box */
+.icon-box
+	.icon-box-link
+		display block
+	
+	&.default
+		.icon-box-wrapper
+			overflow hidden
+			position relative
+
+		.icon-box-icon-area
+			float left
+			margin-right 15px
+			width 40px
+			position absolute
+			left 0
+			top 50%
+			transform translate(0, -50%)
+
+			i
+				font-size 40px
+		
+		.icon-box-content-area
+			float right
+			width calc(100% - 55px)
+			
+			.link
+				i
+					font-size 1em
+					color inherit
+	
+	&.content
+		.icon-box-icon-area
+			text-align center
+			
+			img
+				width 100px
+				push-auto()
+				margin-bottom 50px
+		
+			i
+				font-size 70px
+				margin-bottom 50px
+				color default-colour
+		
+		.icon-box-content-area
+			.heading
+				font-size 1.5em
+				margin-bottom 15px
+			
+			.content
+				max-width 400px
+				font-size 14px
+
+.img-content-area
+	> div
+		float left
+		width 50%
+	
+	.img-area
+		.img-wrap-outer
+			box-shadow 0 20px 50px 0 rgba(0, 0, 0, 0.1)
+			border-radius 20px
+			overflow hidden
+			
+			.img-wrap-inner
+				overflow hidden
+				border-radius 20px
+				transition 1.2s
+				
+				img
+					border-radius 20px
+					margin 0 !important
+					overflow hidden !important
+					
+				//&:hover
+				//	transform scale(1.2)
+
+	.content-area
+		padding-left 100px
+		top 50%
+		transform translate(0, -50%)
+		position absolute
+		right 0
+	
+	&:before
+	&:after
+		content ""
+	
+	&:after
+		display table
+		clear both
+	
+	&.alt
+		.img-area
+			float right
+		
+		.content-area
+			left 0
+			right auto
+			padding-left 0
+			padding-right 100px
+
+.sec-img
+	&.payroll
+		background-image('/wp-content/uploads/2019/05/woman-using-laptop-in-office.jpg', rgba(0, 0, 0, 0.45))
+		
+	&.bookkeeping
+		background-image('/wp-content/uploads/2019/06/colleagues-managing-bookkeeping.jpg', rgba(0, 0, 0, 0.45))
+
+/* Testimonial Box */
+.testimonial-box
+	border-radius 20px
+	box-shadow 0 0 15px 0 rgba(0, 0, 0, 0.1)
+	text-align center
+	transition 0.6s
+	
+	.testimonial-box-img
+		height 200px
+		border-radius 20px 20px 0 0
+		
+		&.anthony-johnson
+			background-image('/wp-content/uploads/2019/05/agency-business.jpg')
+			
+		&.ruhin-khan
+			background-image('/wp-content/uploads/2019/05/chairs-computers-contemporary.jpg')
+			
+		&.john-doe
+			background-image('/wp-content/uploads/2019/05/chairs-computers-contemporary.jpg')
+
+	.testimonial-box-content
+		padding 40px
+		background white-colour
+		border-radius 0 0 20px 20px
+		
+		.name
+		.role
+			normalize-line-height()
+			
+		.img
+			height 50px
+			width 50px
+			push-auto()
+			margin-bottom 20px
+			border-radius 50%
+		
+		.name
+			font-weight 600
+			font-size 1.21em
+			color secondary-colour
+
+		.logo
+			height 13px
+			width auto
+			push-auto()
+		
+		.role
+			&:last-child
+				margin-bottom 0
+	
+	&.no-img
+		.testimonial-box-content
+			border-radius 20px
+
+	&:hover
+		box-shadow 0 15px 60px 0 rgba(0, 0, 0, 0.15)
+
+/* Package Table */
+.packages-table
+	.packages-table-row
+		.packages-table-col
+			float left
+			width 16.66667%
+			
+			.package-heading
+				font-size 2.5em
+				margin-bottom 60px
+				padding-top 40px
+
+				span
+					display block
+			
+			.table-list
+				li
+					font-size 1.07em
+					color #C5E3FF
+					height 65px
+					line-height 65px
+					margin-bottom 0
+
+			.package-icon
+				width 80px
+				push-auto()
+	
+		&:before
+		&:after
+			content ""
+		
+		&:after
+			display table
+			clear both
+
+.package-box
+	padding 40px
+	text-align center
+	transition 0.6s
+	border-radius 20px
+
+	.icon
+		height 76px
+		width auto
+		push-auto()
+		margin-bottom 62px
+		
+	.table-package-list
+		margin-bottom 30px
+
+		li
+			color white-colour !important
+			
+			.plan
+				font-size 1.21em
+				font-weight 700
+				line-height 1em
+				display block
+				
+				.recommended
+					display block
+					font-size 8px
+					margin-top 5px
+					font-weight 400
+					text-transform uppercase
+					letter-spacing 1px
+					margin-right -1px
+					color #C5E3FF
+					line-height 1em
+			
+			.monthly-price
+				font-weight 900
+				font-size 1.8em
+				line-height 1em
+				
+				.vat
+					display block
+					margin-top -18px
+					color #A7CDFA
+					font-size 12px
+					letter-spacing 5px
+					margin-right -5px
+					font-weight 400
+					line-height 1em
+					
+			&.plan-li
+				position relative
+				
+				.plan
+					position absolute
+					top 50%
+					transform translate(0, -50%)
+					width 100%
+			
+			&.monthly-price-li
+				line-height 60px !important
+
+			i
+				color white-colour
+				margin-right 0
+				font-size 1.5em
+				font-weight normal
+				
+				&.fa-times-circle
+					opacity 0.4
+	
+	.btn
+		&.btn-white
+			&:hover
+				border-color primary-colour
+				background primary-colour
+				color white-colour
+				
+		&.btn-primary
+			&:hover
+				border-color white-colour
+				background white-colour
+				color default-colour
+
+	&.active
+		box-shadow 0 0 70px -25px rgba(0, 0, 0, 0.2)
+	
+	&:hover
+		box-shadow 0 0 70px -5px rgba(0, 0, 0, 0.2)
+
+/* CTA Sec */
+.cta-sec
+	padding-top 100px
+	padding-bottom 100px
+
+	img
+		max-width 900px
+		margin 0 auto 40px
+
+	.heading
+		margin-bottom 20px
+	
+	.content
+		margin-bottom 30px
+	
+	&.alt
+		.heading
+			margin-bottom 0 !important
+			
+		.btn
+			margin 13.5px 0 0
+
+/* Service Box */
+.service-box
+	display block
+	
+	.service-box-wrapper
+		margin 0 -15px
+
+		.service-box-content
+			float left
+			padding 0 15px
+			width 50%
+			padding-right 30px
+			position absolute
+			top 50%
+			transform translate(0, -50%)
+			
+			.heading
+				font-size 3em
+				
+			.content
+				margin 30px 0
+				color text-colour
+			
+			.btn
+				transition main-transition-seconds
+		
+		.service-box-img
+			float right
+			width 50%
+			padding-left 30px
+			
+			.img-area
+				box-shadow 0 20px 50px 0 rgba(0, 0, 0, 0.1)
+				border-radius 20px
+				
+				.img
+					overflow hidden
+					border-radius 20px
+					height 500px
+	
+		&:before
+		&:after
+			content ""
+		
+		&:after
+			display table
+			clear both
+	
+	&.alt
+		.service-box-wrapper
+			.service-box-content
+				float right
+				right 0
+				padding-right 15px
+				padding-left 30px
+				
+			.service-box-img
+				padding-right 30px
+				padding-left 15px
+				float left
+		
+/* Features */
+.features-row
+	max-width 1400px
+	margin auto
+	overflow hidden
+	
+	.features-col
+		float left
+		width 33.333%
+		transition 0.6s
+		position relative
+		
+		&:after
+			content ""
+			position absolute
+			background url('/wp-content/themes/dtm/images/svgs/dotted-line.svg')
+			background-size contain
+			background-repeat no-repeat
+			position absolute
+			width 325px
+			height 100px
+			opacity 0.2
+			display block
+			right -163px
+		
+		&.first
+			&:after
+				top 50px
+
+		&.second
+			padding-top 60px
+			
+			&:after
+				top 110px
+				transform rotate(180deg)
+			
+		&.third
+			padding-top 120px
+			
+			&:after
+				display none
+
+/* Company Logos */
+.company-logos
+	max-width 1750px
+	push-auto()
+	
+	.heading
+		margin-bottom 50px
+		text-align center
+
+	ul
+		overflow hidden
+		margin 0 -15px
+
+		li
+			float left
+			width 16.6667%
+			padding 0 15px
+			margin-bottom 0
+			
+			img
+				height auto
+				max-width 150px
+				margin auto
+
+/* Banner Content */
+.move-up-to-banner
+	margin-top -400px
+	
+/* Stat */
+.stat
+	padding 40px
+	border-radius 10px
+	box-shadow 0 0 35px 0 rgba(0, 0, 0, 0.05)
+	transition 0.6s
+	text-align left
+
+	.number
+		font-size 4em
+		color default-colour
+		margin-bottom 20px
+		font-weight 600
+		display block
+		line-height 1em
+	
+	.heading
+		font-size 1.21em
+		margin 0 0 20px
+	
+	&:hover
+		box-shadow 0 0 35px 0 rgba(0, 0, 0, 0.15)
+
+.stat-wrap-row
+	margin-left -15px
+	margin-right -15px
+	margin-bottom -60px
+
+	.stat-wrap
+		padding 0 35px
+		float left
+		width 50%
+		margin-bottom 70px
+	
+	.stat-wrap-two
+		padding-top 160px
+			
+	.stat-wrap-three
+		margin-top -160px
+	
+	&:before
+	&:after
+		content ""
+	
+	&:after
+		display table
+		clear both

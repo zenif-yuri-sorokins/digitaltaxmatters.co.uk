@@ -1,0 +1,79 @@
+// Header Top
+if header-top
+	#header-top
+		padding-top 15px
+		padding-bottom 15px
+		
+		ul
+			li
+				a
+					color white-colour
+
+					&:hover
+						color secondary-colour
+			
+			&.contact
+				li
+					i
+						color secondary-colour
+			
+			&.social
+				li
+					i
+						margin-right 0
+
+/* Header Style */
+.main-header
+	position absolute
+	left 0
+	top 0
+	width 100%
+	z-index 999
+	padding-top 42.5px
+
+	.logo
+		width 300px
+		display block
+		padding 16.5px 0
+
+/* Mega Menu */
+#mega-menu-wrap-primary
+	.mega-menu-link
+		transition main-transition-seconds !important
+	
+	#mega-menu-primary > li.mega-menu-item
+		&.mega-menu-item-has-children
+			a
+				position relative
+		
+		&:hover
+			&.mega-menu-item-has-children a:after
+				opacity 1
+
+		&:first-of-type
+			> a.mega-menu-link
+				padding-left 0 !important
+				
+		&:last-of-type
+			> a.mega-menu-link
+				padding-right 0 !important
+	
+		.mega-sub-menu
+			#mega-menu-26-1
+				.mega-menu-item-680
+					.mega-sub-menu
+						margin-bottom -10px
+						overflow hidden
+
+						li
+							display block
+							float left
+							width 25%
+			
+			.mega-menu-item-has-children
+				a:after
+					display none
+			
+			img
+				margin-bottom -206px
+				border-radius 10px
