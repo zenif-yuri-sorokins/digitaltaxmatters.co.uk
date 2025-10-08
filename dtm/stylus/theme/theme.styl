@@ -824,7 +824,7 @@
 				line-height 60px
 				
 				&.package-table-label
-					width 50%
+					width 40%
 					padding-left 0
 					font-weight 600
 					padding-left 15px
@@ -833,12 +833,12 @@
 						height 120px
 				
 				&.package-table-value
-					width calc(50% / 4)
+					width calc(60% / 5)
 					text-align center
 						
 					&.package-table-top
 						font-weight 600
-						height 120px
+						height 125px
 						line-height 1.4em
 						color white-colour
 						position relative
@@ -847,7 +847,10 @@
 							background #A7D5FF
 					
 						&.basic
-							background #87C6FF
+							background #98ceff;
+
+						&.basic-alt
+							background: #7bc0ff;
 					
 						&.standard
 							background #67B4FF
@@ -864,10 +867,14 @@
 						
 						.text
 							display block
-							font-size 1.14em
-							font-weight 400
+							font-size 1.24em
+							font-weight 600
 							margin-bottom 8px
 							line-height 1em
+							.text-sm
+								font-weight 400
+								display block
+								font-size 0.9em
 						
 						.price
 							display block
@@ -1056,3 +1063,59 @@ section.privacy-policy
     font-size: 1.5em;
   }
 }
+
+
+// Blog Feed
+.project-box {
+  position: relative;
+}
+.project-box .img-wrapper {
+  height: 440px;
+  position: relative;
+}
+.project-box .img-wrapper .img-area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 30px 0 rgba(0,0,0,.1);
+  border-radius: 19px;
+}
+.img-hover-wrapper .img-area {
+  overflow: hidden;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.project-box .img-wrapper .img-area .img-area-inner {
+  transition: all .3s ease-in-out;
+  height: 100%;
+}
+.project-box .content-area .content-inner {
+  text-align: center;
+}
+.project-box .content-area .content-inner .heading {
+  margin: 25px 0 25px;
+}
+.img-hover-wrapper:hover .img-area .img-area-inner {
+  transform: scale(1.15);
+}
+
+.large-li{
+	ul.list-tick.fixed li::before {
+		margin-right: 9px !important;
+	}
+
+	ul.fixed li::before, ul li i {
+		margin-left: -23px;
+	}
+
+	ul.list-tick.fixed li {
+		margin-left: 25px !important;
+	}
+	ul.list-tick.fixed li .fw-reg{
+		font-weight: 500;
+	}
+}
+

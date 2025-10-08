@@ -31,7 +31,104 @@ class HTML_Elements{
     add_shortcode('resource-loader', array($this, 'resource_loader'));
     add_shortcode('get-success-story-image', array($this, 'get_success_story_image'));
     add_shortcode('package-table', array($this, 'package_table'));
+    add_shortcode('projects-feed', array($this, 'projects_feed'));
   }
+
+
+  public function projects_feed($attr, $content = '')
+  {
+      // Extract attributes and set default values
+      $attr = shortcode_atts([
+          'posts_per_page' => 2, // Default number of posts
+          'category' => 3, // Default category ID
+          'col_size' => '3',
+          'responsive_col' => 'col-sm-', // Default column class
+      ], $attr);
+  
+      // Query arguments
+      $query_args = [
+          'post_type' => 'post',
+          'posts_per_page' => intval($attr['posts_per_page']),
+          'post_status' => 'publish',
+          'cat' => intval($attr['category']), // Use 'cat' instead of 'category' for WP_Query
+          'orderby' => 'date',
+          'order' => 'DESC',
+      ];
+  
+      $query = new WP_Query($query_args);
+  
+      // Start output buffering
+      ob_start();
+  
+      if ($query->have_posts()) :
+        
+          while ($query->have_posts()) : $query->the_post();
+  
+              // Set the heading tag based on the post position
+              $tag = ($query->current_post + 1 == $query->post_count) ? 'h2' : 'h3';
+              $title = sprintf('<%1$s class="heading">%2$s</%1$s>', esc_html($tag), esc_html(get_the_title()));
+  
+              // Get the post thumbnail URL
+              $thumbnail_id = get_post_thumbnail_id();
+              $image_url = wp_get_attachment_image_src($thumbnail_id, 'large'); // Use 'large' or set a custom size
+              $image_url = $image_url ? esc_url($image_url[0]) : '';
+  
+              ?>
+              <article id="post-<?php the_ID(); ?>">
+                  <div class="project-box">
+                      <a href="<?php echo esc_url(get_permalink()); ?>" class="project-box-wrapper" title="<?php echo esc_attr(get_the_title()); ?>">
+                          <div class="img-wrapper img-hover-wrapper">
+                              <div class="img-area">
+                                  <div class="img-area-inner" style="background: url(<?php echo $image_url; ?>) center center / cover;"></div>
+                              </div>
+                          </div>
+                          <div class="content-area">
+                              <div class="content-inner">
+                                  <?php
+                                  if (!in_category($attr['category'])) {
+                                      echo '<span class="date">' . esc_html(get_the_date('jS M Y')) . '</span>';
+                                  }
+  
+                                  // Display the title
+                                  echo $title;
+  
+                                  // Get content based on category
+                                  $content = '';
+                                  if (in_category($attr['category'])) {
+                                      $custom_fields = get_post_custom(get_the_ID());
+                                      $content = isset($custom_fields['cs_page_subheading'][0]) ? $custom_fields['cs_page_subheading'][0] : '';
+                                  } else {
+                                      $content = strip_tags(get_the_content());
+                                  }
+  
+                                  if (!empty($content)) :
+                                      ?>
+                                      <p class="content"><?php echo esc_html(substr(trim($content), 0, 100)) . '...'; ?></p>
+                                  <?php endif; ?>
+  
+                                  <span class="btn btn-line btn-line-no-arrow">
+                                      <?php echo in_category($attr['category']) ? 'Read More' : 'Read Article'; ?>
+                                      <i class="far fa-long-arrow-right icon right"></i>
+                                  </span>
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+              </article>
+              <?php
+          endwhile;
+          wp_reset_postdata();
+      else :
+          echo '<p>No posts found.</p>';
+      endif;
+  
+      // Get the buffered content
+      $output = ob_get_clean();
+  
+      // Return the content for the shortcode
+      return $output;
+  }
+
 
   public function link($attr, $content = ''){
     $attr = shortcode_atts(array(
@@ -446,10 +543,12 @@ class HTML_Elements{
       'ctr' => '',
       'cs' => '',
       'ptr' => '',
+      'mtd' => '',
       'payroll' => '',
       'rb' => '',
       'fhx' => '',
       'vr' => '',
+      'xl' => '',
       'bk' => '',
       'link' => '',
       'link_text' => 'Learn More',
@@ -470,8 +569,11 @@ class HTML_Elements{
     $cs = ($attr['cs'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
     $cs = ($attr['cs'] == '-') ? $attr['cs'] : $cs;
 
-    $ptr = $attr['ptr'];
+    $ptr = ($attr['ptr'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
     $ptr = ($attr['ptr'] == '-') ? $attr['ptr'] : $ptr;
+
+    $mtd = ($attr['mtd'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
+    $mtd = ($attr['mtd'] == '-') ? $attr['mtd'] : $mtd;
 
     $payroll = (!is_numeric($attr['payroll']) && $attr['payroll'] == 'no') ? '<i class="fa fa-times-circle"></i>' : $attr['payroll'];
     $payroll = ($attr['payroll'] == '-') ? $attr['payroll'] : $payroll;
@@ -485,6 +587,9 @@ class HTML_Elements{
     $vr = ($attr['vr'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
     $vr = ($attr['vr'] == '-') ? $attr['vr'] : $vr;
 
+    $xl = ($attr['xl'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
+    $xl = ($attr['xl'] == '-') ? $attr['xl'] : $xl;
+
     $bk = ($attr['bk'] == 'yes') ? '<i class="far fa-check-circle"></i>' : '<i class="far fa-times-circle"></i>';
     $bk = ($attr['bk'] == '-') ? $attr['bk'] : $bk;
 
@@ -497,11 +602,13 @@ class HTML_Elements{
     $html .= '<li class="ctr-li"><span class="ctr">'. $ctr .'</span></li>';
     $html .= '<li class="cs-li"><span class="cs">'. $cs .'</span></li>';
     $html .= '<li class="ptr-li"><span class="ptr">'. $ptr .'</span></li>';
+    $html .= '<li class="mtd-li"><span class="mtd">'. $mtd .'</span></li>';
     $html .= '<li class="payroll-li"><span class="payroll">'. $payroll .'</span></li>';
     $html .= '<li class="rb-li"><span class="rb">'. $rb .'</span></li>';
     $html .= '<li class="fhx-li"><span class="fhx">'. $fhx .'</span></li>';
     $html .= '<li class="vr-li"><span class="vr">'. $vr .'</span></li>';
     $html .= '<li class="bk-li"><span class="bk">'. $bk .'</span></li>';
+    $html .= '<li class="xl-li"><span class="xl">'. $xl .'</span></li>';
     $html .= '</ul>';
     $html .= '<a href="'. $attr['link'] .'" class="'. $attr['link_class'] .'" title="'. $attr['link_text'] .'">'. $attr['link_text'] .' <i class="fa fa-long-arrow-right"></i></a>';
     $html .= '</div>';
@@ -664,28 +771,34 @@ class HTML_Elements{
     $html .= '<div class="package-table-col package-table-label package-table-mute"></div>';
     $html .= '<div class="package-table-col package-table-value package-table-top sole">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Sole Trader</span> <span class="price">£30 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Sole Trader  <span class="text-sm">Non MTD</span></span> <span class="price">From £40 <span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
-    $html .= '<div class="package-table-col package-table-value package-table-top basic">';
+       $html .= '<div class="package-table-col package-table-value package-table-top basic">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Basic</span> <span class="price">£125 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Sole Trader <span class="text-sm">MTD Compliant</span></span> <span class="price">£60 <span class="vat">(+VAT)</span></span>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '<div class="package-table-col package-table-value package-table-top basic-alt">';
+    $html .= '<div class="package-table-top-inner">';
+    $html .= '<span class="text">Basic</span> <span class="price">£150 <span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top standard">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Standard</span> <span class="price">£250 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Standard</span> <span class="price">£275 <span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top professional">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Professional</span> <span class="price">£375 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Professional</span> <span class="price">£400 <span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '</div>';
 
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">Sole Trader Accounts</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
@@ -695,6 +808,7 @@ class HTML_Elements{
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">Limited Company Accounts & Company Tax Return</div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
@@ -703,6 +817,7 @@ class HTML_Elements{
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">Confirmation Statement & Registered Office</div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
@@ -710,16 +825,27 @@ class HTML_Elements{
 
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">Personal Tax Return & Tax Planning</div>';
-    $html .= '<div class="package-table-col package-table-value">1</div>';
-    $html .= '<div class="package-table-col package-table-value">1</div>';
-    $html .= '<div class="package-table-col package-table-value">2</div>';
-    $html .= '<div class="package-table-col package-table-value">5</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '</div>';
+
+    $html .= '<div class="package-table-row">';
+    $html .= '<div class="package-table-col package-table-label">MTD filing 4 quarters</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '</div>';
 
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">Payroll</div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
-    $html .= '<div class="package-table-col package-table-value">2</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value">1</div>';
     $html .= '<div class="package-table-col package-table-value">5</div>';
     $html .= '<div class="package-table-col package-table-value">20</div>';
     $html .= '</div>';
@@ -738,10 +864,12 @@ class HTML_Elements{
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '</div>';
 
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label">VAT Return Review & Submission</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
@@ -753,11 +881,30 @@ class HTML_Elements{
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '</div>';
+
+        $html .= '<div class="package-table-row">';
+    $html .= '<div class="package-table-col package-table-label">Xero Licence</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
+    $html .= '</div>';
+
+        $html .= '<div class="package-table-row">';
+    $html .= '<div class="package-table-col package-table-label">Dext</div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-times-circle"></i></div>';
+    $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '<div class="package-table-col package-table-value"><i class="far fa-check-circle"></i></div>';
     $html .= '</div>';
     
     $html .= '</div>';
-    $html .= '</div>';
+    $html .= '</div>'; 
 
     return $html;
   }

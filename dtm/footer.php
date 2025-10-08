@@ -41,7 +41,7 @@
     </div>
 </footer>
 <?php
-    $allowed_pages_hb = array(284, 348);
+    $allowed_pages_hb = array(284, 348, 3465);
 
     if(is_front_page() || in_array(get_the_ID(), $allowed_pages_hb)):
 ?>
