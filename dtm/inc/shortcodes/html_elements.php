@@ -40,7 +40,7 @@ class HTML_Elements{
       // Extract attributes and set default values
       $attr = shortcode_atts([
           'posts_per_page' => 2, // Default number of posts
-          'category' => 3, // Default category ID
+          'category' => 7, // Default category ID
           'col_size' => '3',
           'responsive_col' => 'col-sm-', // Default column class
       ], $attr);

@@ -20114,6 +20114,25 @@ button {
   display: table;
   clear: both;
 }
+.cta-strip-header {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  padding: 6px;
+  text-transform: capitalize;
+  position: relative;
+  width: 100%;
+  z-index: 999;
+  transition: all 0.3s ease-in-out;
+}
+.cta-strip-header a {
+  color: #fff;
+  text-transform: capitalize;
+}
+.cta-strip-header:hover {
+  background-color: #174471;
+}
 #header-top {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -21569,6 +21588,17 @@ section.privacy-policy .pp-list li:before {
 .large-li ul.list-tick.fixed li {
   margin-left: 25px !important;
 }
+.large-li .large-li ul.list-tick.fixed.fixed-lg li {
+  margin-left: 39px !important;
+}
+.large-li .large-li ul.fixed.fixed-lg li::before,
+.large-li .large-li ul li i {
+  margin-left: -39px !important;
+}
+.large-li .large-li ul.fixed li::before,
+.large-li .large-li ul li i {
+  margin-left: -32px !important;
+}
 .large-li ul.list-tick.fixed li .fw-reg {
   font-weight: 500;
 }
@@ -22474,6 +22504,10 @@ section.privacy-policy .pp-list li:before {
 @media only screen and (min-width: 768px) {
   .parallax {
     background-attachment: fixed !important;
+  }
+  .cta-strip-header {
+    padding: 8px;
+    z-index: 1000;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
