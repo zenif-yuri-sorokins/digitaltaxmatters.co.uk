@@ -766,32 +766,33 @@ class HTML_Elements{
   }
   public function package_table(){
     $html  = '<div class="package-table-wrapper">';
+    $html .= '<div class="toggle-wrapper"><label class="toggle-label">Monthly</label><div class="toggle-switch"><input type="checkbox" class="toggle-input" id="price-toggle"><label for="price-toggle" class="toggle-slider"></label></div><label class="toggle-label">Annually</label></div>';
     $html .= '<div class="package-table">';
     $html .= '<div class="package-table-row">';
     $html .= '<div class="package-table-col package-table-label package-table-mute"></div>';
     $html .= '<div class="package-table-col package-table-value package-table-top sole">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Sole Trader  <span class="text-sm">Non MTD</span></span> <span class="price">From £40 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text"> <span class="text-sm">Non MTD</span> Sole Trader <span class="text-sm">Non MTD</span></span> <span class="price" data-monthly="From £40" data-annually="From £480">From £40 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
     $html .= '</div>';
     $html .= '</div>';
-       $html .= '<div class="package-table-col package-table-value package-table-top basic">';
+    $html .= '<div class="package-table-col package-table-value package-table-top basic">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Sole Trader <span class="text-sm">MTD Compliant</span></span> <span class="price">£60 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text"> <span class="text-sm">MTD Compliant</span> Sole Trader </span> <span class="price" data-monthly="£60" data-annually="£720">£60 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top basic-alt">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Basic</span> <span class="price">£150 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Basic</span> <span class="price" data-monthly="£150" data-annually="£1800">£150 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top standard">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Standard</span> <span class="price">£275 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Standard</span> <span class="price" data-monthly="£275" data-annually="£3300">£275 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top professional">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Professional</span> <span class="price">£400 <span class="vat">(+VAT)</span></span>';
+    $html .= '<span class="text">Professional</span> <span class="price" data-monthly="£400" data-annually="£4800">£400 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '</div>';
@@ -906,6 +907,7 @@ class HTML_Elements{
     $html .= '</div>';
     $html .= '</div>'; 
 
+    
     return $html;
   }
 }

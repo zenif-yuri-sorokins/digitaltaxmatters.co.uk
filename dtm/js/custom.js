@@ -123,4 +123,26 @@ jQuery(document).ready(function($){
 
     return false
   })
+
+  const priceToggle = document.getElementById('price-toggle');
+  const prices = document.querySelectorAll('.price');
+  const priceLabels = document.querySelectorAll('.price-label');
+
+  priceToggle.addEventListener('change', function() {
+    if (this.checked) {
+      prices.forEach(price => {
+        price.innerHTML = `${price.dataset.annually} <span class="vat">(+VAT)</span>`;
+      });
+      priceLabels.forEach(label => {
+        label.textContent = '/annually';
+      });
+    } else {
+      prices.forEach(price => {
+        price.innerHTML = `${price.dataset.monthly} <span class="vat">(+VAT)</span>`;
+      });
+      priceLabels.forEach(label => {
+        label.textContent = '/monthly';
+      });
+    }
+  });
 });
