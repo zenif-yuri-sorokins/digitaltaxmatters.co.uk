@@ -32,10 +32,82 @@ class HTML_Elements{
     add_shortcode('get-success-story-image', array($this, 'get_success_story_image'));
     add_shortcode('package-table', array($this, 'package_table'));
     add_shortcode('projects-feed', array($this, 'projects_feed'));
+    add_shortcode('pricetable-box', array($this, 'pricetable_box'));
+    add_shortcode('pricetable-box-addon', array($this, 'pricetable_box_addon'));
   }
 
 
-  public function projects_feed($attr, $content = '')
+  public function pricetable_box_addon($attr,  $content = ''){
+    $attr = shortcode_atts(array(
+      'heading' => ''
+    ), $attr);
+    $html = '<div class="package-table-wrapper  ">';
+    $html .= '<div class="pricetable-box">';
+    $html .= '<div class="pricetable-box-heading"><h3>'. $attr['heading'] .' <i class="fa fa-long-arrow-right"></i></h3></div>';
+    $html .= '<div class="pricetable-box-content" style="display: none;">';
+    $html .= do_shortcode($content);
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+
+    return $html;
+  }
+
+
+  public function pricetable_box($attr, $content = ''){
+    $attr = shortcode_atts(array(
+      'heading' => ''
+    ), $attr);
+
+    $html = '<div class="pricetable-box">';
+    $html .= '<div class="package-table-wrapper  ">';
+    $html .= '<div class="gi-row">';
+    $html .= '<div class="gi-col-sm-12 ">';
+    $html .= '<div class="pricetable-box-heading"><h3>'. $attr['heading'] .'<i class="fa fa-long-arrow-right"></i> </h3> </div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '<div class="pricetable-box-content" style="display: none;">';
+    $html .= '<div class="package-table-wrapper  ">';
+    $html .= '<div class="package-table">';
+    $html .= '<div class="gi-row">';
+    $html .= '<div class="gi-col-sm-12 gi-col-md-3 gi-col-lg-6">';
+    $html .= '<div class="package-table-col-main">';
+    $html .= '<div class="package-table-col package-table-label">Payroll processing and HR support combined</div>';
+    $html .= '<div class="package-table-col  package-table-label">Telephone and email HR advice for day-to-day queries</div>';
+    $html .= '<div class="package-table-col  package-table-label">Template contracts and policies – white-labelled or branded</div>';
+    $html .= '<div class="package-table-col  package-table-label">Compliance updates to keep you on the right side of employment law </div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '<div class="gi-col-sm-12 gi-col-md-3 gi-col-lg-2">';
+    $html .= '<div class="package-table-col-main card t-a-c">';
+    $html .= '<div class="card-header"><span class="price-lg"> £50 </span> <span class="info">+ VAT/month</span></div>';
+    $html .= '<div class="content">Up to <span class="font-lg">15</span> employees</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+     $html .= '<div class="gi-col-sm-12 gi-col-md-3 gi-col-lg-2">';
+    $html .= '<div class="package-table-col-main card t-a-c">';
+    $html .= '<div class="card-header"><span class="price-lg"> £100 </span> <span class="info">+ VAT/month</span></div>';
+    $html .= '<div class="content">Up to <span class="font-lg">16-30 </span> employees</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '<div class="gi-col-sm-12 gi-col-md-3 gi-col-lg-2">';
+    $html .= '<div class="package-table-col-main card t-a-c">';
+    $html .= '<div class="card-header"><span class="price-lg"> £150  </span> <span class="info">+ VAT/month</span></div>';
+    $html .= '<div class="content">Up to <span class="font-lg">31-45</span> employees</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+    $html .= '</div>';
+
+    return $html;
+  }
+
+
+  public function projects_feed($attr)
   {
       // Extract attributes and set default values
       $attr = shortcode_atts([
@@ -65,7 +137,7 @@ class HTML_Elements{
           while ($query->have_posts()) : $query->the_post();
   
               // Set the heading tag based on the post position
-              $tag = ($query->current_post + 1 == $query->post_count) ? 'h2' : 'h3';
+              $tag = ($query->current_post + 1 == $query->post_count) ? 'h3' : 'h3';
               $title = sprintf('<%1$s class="heading">%2$s</%1$s>', esc_html($tag), esc_html(get_the_title()));
   
               // Get the post thumbnail URL
@@ -772,27 +844,27 @@ class HTML_Elements{
     $html .= '<div class="package-table-col package-table-label package-table-mute"></div>';
     $html .= '<div class="package-table-col package-table-value package-table-top sole">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text"> <span class="text-sm">Non MTD</span> Sole Trader <span class="text-sm">Non MTD</span></span> <span class="price" data-monthly="From £40" data-annually="From £480">From £40 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
+    $html .= '<span class="text"> <span class="text-sm">Non MTD</span> Sole Trader <span class="text-sm p-t-sm">From</span></span> <span class="price" data-monthly="£40" data-annually="£480"> £40<span class="price-label">/mo</span><span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top basic">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text"> <span class="text-sm">MTD Compliant</span> Sole Trader </span> <span class="price" data-monthly="£60" data-annually="£720">£60 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
+    $html .= '<span class="text"> <span class="text-sm">MTD Compliant</span> Sole Trader </span> <span class="price" data-monthly="£60" data-annually="£720">£60<span class="price-label">/mo</span><span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top basic-alt">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Basic</span> <span class="price" data-monthly="£150" data-annually="£1800">£150 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
+    $html .= '<span class="text">Basic</span> <span class="price" data-monthly="£150" data-annually="£1800">£150<span class="price-label">/mo</span><span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top standard">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Standard</span> <span class="price" data-monthly="£275" data-annually="£3300">£275 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
+    $html .= '<span class="text">Standard</span> <span class="price" data-monthly="£275" data-annually="£3300">£275<span class="price-label">/mo</span><span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '<div class="package-table-col package-table-value package-table-top professional">';
     $html .= '<div class="package-table-top-inner">';
-    $html .= '<span class="text">Professional</span> <span class="price" data-monthly="£400" data-annually="£4800">£400 <span class="vat">(+VAT)</span></span><span class="price-label">/monthly</span>';
+    $html .= '<span class="text">Professional</span> <span class="price" data-monthly="£400" data-annually="£4800">£400<span class="price-label">/mo</span><span class="vat">(+VAT)</span></span>';
     $html .= '</div>';
     $html .= '</div>';
     $html .= '</div>';

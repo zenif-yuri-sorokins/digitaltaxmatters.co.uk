@@ -124,6 +124,20 @@ jQuery(document).ready(function($){
     return false
   })
 
+  $(".pricetable-box-heading").click(function () {
+    if (
+      $(this).parents(".pricetable-box").children(".pricetable-box-content").is(":hidden")
+    ) {
+      $(this).parents(".pricetable-box").addClass("active")
+      $(this).parents(".pricetable-box").children(".pricetable-box-content").slideDown()
+    } else {
+      $(this).parents(".pricetable-box").removeClass("active")
+      $(this).parents(".pricetable-box").children(".pricetable-box-content").slideUp()
+    }
+
+    return false
+  })
+
   const priceToggle = document.getElementById('price-toggle');
   const prices = document.querySelectorAll('.price');
   const priceLabels = document.querySelectorAll('.price-label');
@@ -131,18 +145,18 @@ jQuery(document).ready(function($){
   priceToggle.addEventListener('change', function() {
     if (this.checked) {
       prices.forEach(price => {
-        price.innerHTML = `${price.dataset.annually} <span class="vat">(+VAT)</span>`;
+        price.innerHTML = `${price.dataset.annually}<span class="price-label">/ann</span> <span class="vat">(+VAT)</span>`;
       });
-      priceLabels.forEach(label => {
-        label.textContent = '/annually';
-      });
+    //   priceLabels.forEach(label => {
+    //     label.textContent = '/ann';
+    //   });
     } else {
       prices.forEach(price => {
-        price.innerHTML = `${price.dataset.monthly} <span class="vat">(+VAT)</span>`;
+        price.innerHTML = `${price.dataset.monthly}<span class="price-label">/mo</span> <span class="vat">(+VAT)</span>`;
       });
-      priceLabels.forEach(label => {
-        label.textContent = '/monthly';
-      });
+    //   priceLabels.forEach(label => {
+    //     label.textContent = '/mo';
+    //   });
     }
   });
 });

@@ -21342,7 +21342,7 @@ button {
 }
 .package-table-wrapper .package-table .package-table-row .package-table-col.package-table-value.package-table-top {
   font-weight: 600;
-  height: 125px;
+  height: 150px;
   line-height: 1.4em;
   color: #fff;
   position: relative;
@@ -21392,7 +21392,7 @@ button {
   font-weight: 300;
   line-height: 1em;
   letter-spacing: 2px;
-  margin-top: 8px;
+  margin-top: 3px;
 }
 .package-table-wrapper .package-table .package-table-row .package-table-col.package-table-value i {
   font-size: 1.4em;
@@ -23663,4 +23663,70 @@ section.privacy-policy .pp-list li:before {
 }
 .toggle-input:checked + .toggle-slider:before {
   transform: translateX(26px);
+}
+.package-table-wrapper .package-table .package-table-row .price-label {
+  font-size: 14px;
+}
+.pricetable-box {
+  margin-bottom: 20px;
+}
+.pricetable-box-heading {
+  background: #f6faff;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.3s easy-in-out;
+}
+.pricetable-box-heading i.fa-long-arrow-right {
+  float: right;
+  font-size: 18px;
+  margin-top: 4px;
+}
+.pricetable-box-heading:hover {
+  background: #f0f6ff;
+}
+.pricetable-box-heading h3 {
+  margin: 0;
+}
+.pricetable-box-content {
+  padding: 15px;
+}
+.package-table-wrapper .package-table .package-table-label {
+  font-weight: 600;
+}
+.package-table-wrapper .package-table .package-table-col-main.card {
+  box-shadow: 0 0 18px 0 rgba(0,0,0,0.08);
+}
+.package-table-wrapper .package-table .package-table-col-main.card .card-header {
+  padding: 19px;
+  background: #7bc0ff;
+  display: block;
+  color: #fff;
+  font-size: 18px;
+}
+.package-table-wrapper .package-table .package-table-col-main.card .price-lg {
+  font-size: 28px;
+  font-weight: 600;
+}
+.package-table-wrapper .package-table .package-table-col-main.card .info {
+  display: block;
+  padding-top: 5px;
+  font-size: 16px;
+}
+.package-table-wrapper .package-table .package-table-col-main.card .content {
+  padding: 34px 0;
+}
+.package-table-wrapper .package-table .package-table-col-main.card .font-lg {
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  padding: 5px;
+}
+.package-table-wrapper .package-table .package-table-col-main .package-table-label {
+  background: #f8fbff;
+}
+.package-table-wrapper .package-table .package-table-col-main .package-table-label:nth-of-type(2n) {
+  background: #f0f6ff;
+}
+.package-table-wrapper .package-table .package-table-col {
+  padding: 18px 15px;
 }
