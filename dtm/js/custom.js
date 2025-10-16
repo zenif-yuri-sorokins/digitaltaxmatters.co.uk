@@ -189,14 +189,51 @@ jQuery(document).ready(function ($) {
 			fieldsets.forEach((f, i) => f.style.display = i === n ? 'block' : 'none');
 			progressBar.forEach((p, i) => p.classList.toggle('active', i <= n));
 		}
+
+		function validateStep(n) {
+			let isValid = true;
+			const fieldset = fieldsets[n];
+			const requiredFields = fieldset.querySelectorAll('[aria-required="true"]');
+
+			requiredFields.forEach(field => {
+				const parent = field.closest('.wpcf7-form-control-wrap');
+				if (field.value.trim() === '') {
+					isValid = false;
+					parent.classList.add('wpcf7-not-valid');
+					field.classList.add('wpcf7-not-valid');
+				} else {
+					parent.classList.remove('wpcf7-not-valid');
+					field.classList.remove('wpcf7-not-valid');
+				}
+			});
+
+			return isValid;
+		}
+
+		form.querySelectorAll('[aria-required="true"]').forEach(field => {
+			field.addEventListener('input', () => {
+				const parent = field.closest('.wpcf7-form-control-wrap');
+				if (field.value.trim() !== '') {
+					parent.classList.remove('wpcf7-not-valid');
+					field.classList.remove('wpcf7-not-valid');
+				}
+			});
+		});
+
 		nextBtns.forEach(btn => btn.addEventListener('click', () => {
-			if (currentStep < fieldsets.length - 1) currentStep++;
-			showStep(currentStep);
+			if (validateStep(currentStep)) {
+				if (currentStep < fieldsets.length - 1) currentStep++;
+				showStep(currentStep);
+			} else {
+				alert('Please fill required fields');
+			}
 		}));
+
 		prevBtns.forEach(btn => btn.addEventListener('click', () => {
 			if (currentStep > 0) currentStep--;
 			showStep(currentStep);
 		}));
+
 		showStep(currentStep);
 	}
 
