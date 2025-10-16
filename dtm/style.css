@@ -18970,7 +18970,7 @@ form textarea {
   margin-bottom: -7px;
 }
 form select {
-  background: url("/images/svgs/select-arrow.svg");
+  background: url("../dtm/images/svgs/select-arrow.svg");
   background-position: 96% 50%;
   background-repeat: no-repeat;
 }
@@ -23729,4 +23729,66 @@ section.privacy-policy .pp-list li:before {
 }
 .package-table-wrapper .package-table .package-table-col {
   padding: 18px 15px;
+}
+.multistep-form fieldset {
+  display: none;
+  border: none;
+}
+.multistep-form fieldset:first-of-type {
+  display: block;
+}
+#progressbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+}
+#progressbar li {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  color: #999;
+}
+#progressbar li i {
+  color: #174471;
+}
+#progressbar li::before {
+  counter-increment: step;
+  content: counter(step);
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  border: 1px solid #56a9fa;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+#progressbar li.active {
+  color: #000;
+  font-weight: 600;
+}
+#progressbar li.active::before {
+  background: #174471;
+  color: #fff;
+  border: 1px solid #174471;
+}
+.action-button {
+  background: #56a9fa;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+}
+.action-button.previous {
+  float: left;
+}
+.action-button.next {
+  float: right;
+}
+.action-button:hover {
+  background: #174471;
 }
