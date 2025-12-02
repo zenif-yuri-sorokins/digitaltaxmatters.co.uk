@@ -32,6 +32,7 @@
 				'pinterest' => ''
 			),
 			'logo' => get_template_directory_uri() . '/images/digital-tax-matters.png',
+			'festive_logo' => get_template_directory_uri() . '/images/christmas-logo-white.png',
 			'opening_times' => array(
 				array(
 					'days' => array(

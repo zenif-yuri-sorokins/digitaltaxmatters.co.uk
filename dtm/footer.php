@@ -9,7 +9,14 @@
             <div class="gi-row t-a-c main-area">
                 <div class="gi-col-sm-12">
                     <a class="logo" href="/" title="<?php echo $config->read('company/name'); ?>">
-                        <img src="<?php echo get_template_directory_uri() . '/images/digital-tax-matters-blue.png'; ?>" alt="<?php echo $config->read('company/name'); ?>" />
+
+
+                    	<?php
+										$logo = (date('F') === 'December')
+											? '/images/christmas-logo-blue.png'
+											: '/images/digital-tax-matters-blue.png'
+										?>
+                        <img src="<?php echo get_template_directory_uri() . $logo  ?>" alt="<?php echo $config->read('company/name'); ?>" />
                     </a>
                     <ul class="contact">
                         <li class="telephone"><?php echo do_shortcode('[company-telephone]'); ?></li>

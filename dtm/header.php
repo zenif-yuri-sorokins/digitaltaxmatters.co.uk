@@ -77,13 +77,13 @@ echo $head->ie_html_tags();
 
 
 
-<div class="cta-strip-header bg-c-black">
-						<div class="gi-row">
-							<div class="gi-col-12">
-								<a href="/services/tax-services/making-tax-digital" title="Are you looking to go digital?">Are you looking to go digital? <i class="fa fa-long-arrow-right"></i></a>
-							</div>
+				<div class="cta-strip-header bg-c-black">
+					<div class="gi-row">
+						<div class="gi-col-12">
+							<a href="/services/tax-services/making-tax-digital" title="Are you looking to go digital?">Are you looking to go digital? <i class="fa fa-long-arrow-right"></i></a>
 						</div>
 					</div>
+				</div>
 				<header id="header">
 					<div id="header-main" class="main-header <?php echo $layout->get_sc_layout()['section']; ?>">
 						<div class="<?php echo $layout->get_sc_layout()['container']; ?>">
@@ -91,7 +91,14 @@ echo $head->ie_html_tags();
 							<div class="gi-row">
 								<div class="gi-col-lg-3 gi-col-md-3 gi-col-sm-3 gi-col-xs-7">
 									<a class="logo" href="/" title="<?php echo $config->read('company/name'); ?>">
-										<img src="<?php echo $config->read('company/logo'); ?>" alt="<?php echo $config->read('company/name'); ?>" />
+
+										<?php
+										$logo = (date('F') === 'December')
+											? $config->read('company/festive_logo')
+											: $config->read('company/logo');
+										?>
+										<img src="<?php echo $logo; ?>" alt="<?php echo $config->read('company/name'); ?>" />
+
 									</a>
 								</div>
 								<div class="gi-col-xs-5 hidden-lg hidden-md hidden-sm">
